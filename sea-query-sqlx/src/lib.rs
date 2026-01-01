@@ -11,6 +11,8 @@
 
 #[cfg(feature = "sqlx-any")]
 mod sqlx_any;
+#[cfg(feature = "sqlx-d1")]
+mod sqlx_d1;
 #[cfg(feature = "sqlx-mysql")]
 mod sqlx_mysql;
 #[cfg(feature = "sqlx-postgres")]
@@ -22,6 +24,7 @@ mod values;
 pub use crate::values::SqlxValues;
 
 #[cfg(any(
+    feature = "sqlx-d1",
     feature = "sqlx-mysql",
     feature = "sqlx-postgres",
     feature = "sqlx-sqlite",
@@ -29,6 +32,7 @@ pub use crate::values::SqlxValues;
 ))]
 mod sqlx;
 #[cfg(any(
+    feature = "sqlx-d1",
     feature = "sqlx-mysql",
     feature = "sqlx-postgres",
     feature = "sqlx-sqlite",

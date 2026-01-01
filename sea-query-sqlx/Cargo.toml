@@ -19,6 +19,7 @@ rust-version = "1.85.0"
 [dependencies]
 sea-query = { version = "1.0.0-rc.10", path = "..", default-features = false, features = ["thread-safe"] }
 sqlx = { version = "0.8", default-features = false, optional = true }
+sqlx-d1 = { version = "0.3.1", default-features = false, optional = true }
 serde_json = { version = "1", default-features = false, optional = true, features = ["std"] }
 chrono = { version = "0.4", default-features = false, optional = true, features = ["clock"] }
 rust_decimal = { version = "1", default-features = false, optional = true }
@@ -34,6 +35,7 @@ sqlx-mysql = ["sqlx/mysql"]
 sqlx-postgres = ["sqlx/postgres"]
 sqlx-sqlite = ["sqlx/sqlite"]
 sqlx-any = ["sqlx/any"]
+sqlx-d1 = ["sqlx", "dep:sqlx-d1"]
 with-chrono = ["sqlx?/chrono", "sea-query/with-chrono", "chrono"]
 with-json = ["sqlx?/json", "sea-query/with-json", "serde_json"]
 with-rust_decimal = ["sqlx?/rust_decimal", "sea-query/with-rust_decimal", "rust_decimal"]
